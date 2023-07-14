@@ -167,6 +167,7 @@ ProcessSetTable::ProcessSetTable() {
   assert(process_set_id == 0);
 }
 
+#if defined(HAVE_MPI) || defined(HAVE_GLOO)
 template<class Context>
 void ProcessSetTable::Initialize_(const Context& global_context) {
   std::lock_guard<std::recursive_mutex> guard(mutex);
@@ -234,7 +235,7 @@ int32_t ProcessSetTable::InitializeRegisteredAndRemoveMarkedIfReady_(
   // Return count from 1)
   return initialized_count;
 }
-
+#endif
 template <class Context>
 void ProcessSetTable::Finalize_(const Context& context, const Status& status) {
   std::lock_guard<std::recursive_mutex> guard(mutex);
