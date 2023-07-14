@@ -9,6 +9,7 @@
 
 #include "controller.h"
 #include "process_set.h"
+#include "logging.h"
 
 namespace horovod {
 namespace common {
