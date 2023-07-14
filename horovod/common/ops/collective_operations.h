@@ -26,6 +26,7 @@
 #include "../half.h"
 #include "../operations.h"
 #include "../parameter_manager.h"
+#include "../logging.h" 
 
 #if __AVX__ && __F16C__
 #include <cpuid.h>
